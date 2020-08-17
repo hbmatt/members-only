@@ -1,0 +1,11 @@
+<h1>The Clubhouse</h1>
+
+<% @posts.each do |post| %>
+  <% if user_signed_in? %>
+    <strong><%= post.user.name %></strong><BR>
+    <small>@<%= post.user.username %></small><BR>
+  <% else %>
+    <strong>anon</strong><BR>
+  <% end %>
+  <p><%= post.body %></p>
+<% end %>
